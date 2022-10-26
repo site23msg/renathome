@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+
+@font-face {
+    src: url("../fonts/open_sans.ttf");
+    font-family:"Opensans";
+    font-display: swap;
+    src: url("../fonts/Playfair.ttf");
+    font-family: "Playfair";
+    font-display: swap;
+    src: url("../fonts/Inter.ttf");
+    font-family: "Inter";
+    font-display: swap;
+}
+
+@tailwind utilities;
