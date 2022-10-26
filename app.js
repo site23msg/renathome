@@ -18,7 +18,7 @@ homeAnchor.addEventListener('click', (e) => {
 
 aboutAnchor.addEventListener('click', (e) => {
     e.preventDefault();
-    homeSection.scrollIntoView({
+    aboutSection.scrollIntoView({
         block: 'center',
         behavior: 'smooth'
     });

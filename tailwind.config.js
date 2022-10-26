@@ -11,6 +11,9 @@ module.exports = {
       },
       'backgroundImage': "url('/src/3.jpg')",
       'featureCard': "url('/src/room.jpg')"
+    },
+    dropShadow: {
+      '3xl': '0 35px 35px rgba(0,0,0, 0.25)'
     }
   },
   plugins: [

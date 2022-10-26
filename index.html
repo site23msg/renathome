@@ -9,20 +9,27 @@
     <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
     <script src="https://kit.fontawesome.com/62acec9a23.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
     <title>23 Apartmans</title>
 </head>
-<body class="font-Inter overflow-x-hidden">
+
+<body class="font-Inter">
 <!--Navigation-->
   <div class="relative aspect-w-16 aspect-h-9">
-    <video class="brightness-50 hover:brightness-100" id="ocScreencapVideo" width="560" height="315" loop src="/src/Hotel in the Philippines.mp4" showinfo="0" controls="false" title="YouTube video player" frameborder="0"; encrypted-media; picture-in-picture" allowfullscreen></video>
-    <span class="uppercase absolute inset-[40%] text-white lg:text-6xl font-bold inline">Discover</span>
+    <video class="brightness-50 hover:brightness-100" id="ocScreencapVideo" width="560" height="315" loop src="/src/Hotel in the Philippines.mp4" showinfo="0" controls="false" title="YouTube video player" frameborder="0"; encrypted-media; picture-in-picture" allowfullscreen>
+    </video>
+    <span class="uppercase absolute inset-[40%] text-white lg:text-6xl font-bold inline z-40">Discover</span>
   </div>
-  <section id="home" :class="{ 'bg-gray-900 lg:opacity-90 shadow transition duration-100' : showBar }"
-            class="flex justify-between items-center text-white absolute top-0 w-full lg:px-10" x-data="{ showBar: false, navbar: false }" @scroll.window="showBar = (window.pageYOffset > 20) ? true : false">
+  <section :class="{ 'bg-gray-900 lg:opacity-90 shadow transition duration-100' : showBar }"
+   class="flex justify-between items-center text-white top-0 absolute w-full lg:px-10 z-50" x-data="{ showBar: false, navbar: false }" id="home" @scroll.window="showBar = (window.pageYOffset > 20) ? true : false">
       <div class="hidden md:flex items-center z-20 drop-shadow-2xl">
         <h1 class="text-6xl text-lime-500 z-20">L</h1>
-        <span class="text-3xl font-bold absolute left-3 bottom-2">House</span>
+        <span class="text-3xl font-bold absolute left-14 bottom-2">House</span>
       </div>
       <nav class="hidden md:block">
           <ul class="flex gap-14 font-bold text-xl">
@@ -44,10 +51,10 @@
           </ul>
       </nav>
       <nav class="md:hidden">
-        <ul :class="navbar == false ? 'absolute top-0 left-0 flex transform duration-500 transition-all -translate-x-full flex-col bg-gray-900 gap-10 text-white' : 'absolute top-0 left-0 flex transform duration-500 transition-all translate-x-0 flex-col bg-gray-900 gap-10 text-white'"
+        <ul :class="navbar === false ? 'absolute top-0 left-0 flex transform duration-500 transition-all -translate-x-full flex-col bg-gray-900 gap-10 text-white' : 'absolute top-0 left-0 flex transform duration-500 transition-all translate-x-0 flex-col bg-gray-900 gap-10 text-white'"
          class="px-5 w-1/2 text-xl py-5">
             <li>
-              <div class="flex items-center z-20 drop-shadow-2xl">
+              <div class="flex items-center z-20 drop-shadow-2xl relative">
                 <h1 class="text-6xl text-lime-500 z-20">L</h1>
                 <span class="text-3xl font-bold absolute left-3 bottom-2">House</span>
               </div>
@@ -69,7 +76,7 @@
             </li>
         </ul>
       </nav>
-      <div class="flex flex-col w-10 m-4 cursor-pointer relative md:hidden" @click="navbar = !navbar" @click.away="navbar = !navbar">
+      <div class="flex flex-col w-10 m-4 cursor-pointer relative md:hidden" @click="navbar = !navbar" @click.away="navbar = false">
         <hr class="border-2 border-Darkblue dark:border-white border-solid  mt-2">
         <hr class="border-2 border-Darkblue  dark:border-white border-solid mt-2">
         <hr class="border-2 border-Darkblue dark:border-white border-solid mt-2">
@@ -92,85 +99,82 @@
               <img src="/src/welcome_house.jpg" alt="">
             </div>
           </div>
-          <div class="">
+          <section>
               <div class="bg-gray-100">
                   <h1 class="text-6xl text-center font-bold text-gray-900 py-20">Features</h1>
-                  <div class="flex flex-row flex-wrap gap-4 justify-around pb-20">
-                      <div class="drop-shadow-2xl">
-                          <div>
-                              <img src="/src/room.jpg" alt="">
-                          </div>
-                          <div class="bg-gray-900 text-gray-300 py-3 font-bold text-center drop-shadow-2xl">
-                              <span class="text-xl">8</span>
-                              <span class="text-xl">Rooms</span>
-                              <i class="text-xl fa-sharp fa-solid fa-door-open"></i>
-                          </div>
+                  <div class="flex px-5 flex-col justify-center items-center gap-10 lg:flex-row lg:justify-around pb-20">
+                      <div class="max-w-[240px] drop-shadow-3xl">
+                        <div>
+                            <img src="/src/rooms.jpg" alt="">
+                        </div>
+                        <div class="bg-gray-900 text-gray-300 py-3 font-bold text-center">
+                            <span class="text-xl">8</span>
+                            <span class="text-xl">Rooms</span>
+                            <i class="text-xl fa-sharp fa-solid fa-door-open"></i>
+                        </div>
                       </div>
-                      <div class="drop-shadow-2xl">
-                          <div>
-                              <img src="/src/beds.webp" alt="">
-                          </div>
-                          <div class="bg-gray-900 text-gray-300 py-3 text-center font-bold drop-shadow-2xl">
-                              <span class="text-xl">8</span>
-                              <span class="text-xl">Beds</span>
-                              <i class="text-xl fa-solid fa-bed"></i>
-                          </div>
+                      <div class="drop-shadow-3xl max-w-[240px]">
+                        <div>
+                            <img src="/src/beds.jpeg" alt="">
+                        </div>
+                        <div class="bg-gray-900 text-gray-300 py-3 text-center font-bold">
+                            <span class="text-xl">8</span>
+                            <span class="text-xl">Beds</span>
+                            <i class="text-xl fa-solid fa-bed"></i>
+                        </div>
                       </div>
-                      <div class="drop-shadow-2xl">
-                          <div>
-                              <img src="/src/bath.webp" alt="">
-                          </div>
-                          <div class="bg-gray-900 text-gray-300 py-3 text-center font-bold drop-shadow-2xl">
-                              <span class="text-xl">8</span>
-                              <span class="text-xl">Baths</span>
-                              <i class="fa-solid fa-bath"></i>
-                          </div>
+                      <div class="drop-shadow-3xl max-w-[240px]">
+                        <div>
+                            <img src="/src/bathroom.jpg" alt="">
+                        </div>
+                        <div class="bg-gray-900 text-gray-300 py-3 text-center font-bold">
+                            <span class="text-xl">8</span>
+                            <span class="text-xl">Baths</span>
+                            <i class="fa-solid fa-bath"></i>
+                        </div>
                       </div>
-                      <div class="drop-shadow-2xl">
-                          <div>
-                              <img src="/src/house.webp" alt="">
-                          </div>
-                          <div class="bg-gray-900 text-gray-300 py-3 text-center font-bold drop-shadow-2xl">
-                              <span class="text-xl">1642</span>
-                              <span class="text-xl">m2</span>
-                              <i class="fa-solid fa-ruler-combined"></i>
-                          </div>
+                      <div class="drop-shadow-3xl max-w-[240px]">
+                        <div>
+                            <img src="/src/house.jpeg" alt="">
+                        </div>
+                        <div class="bg-gray-900 text-gray-300 py-3 text-center font-bold">
+                            <span class="text-xl">1642</span>
+                            <span class="text-xl">m2</span>
+                            <i class="fa-solid fa-ruler-combined"></i>
+                        </div>
                       </div>
                   </div>
-                  <div id="gallery" class="drop-shadow-xl z-20 mt-10">
-                      <article x-data="slider" class="relative flex flex-shrink-0 overflow-hidden shadow-xl">
-                          <div class="bg-gray-600 text-white absolute top-5 right-5 text-sm px-2 text-center z-10">
-                              <span x-text="currentIndex"></span>
-                              <span x-text="images.length"></span>
-                          </div>
-                          <template x-for="(image, index) in images">
-                              <figure class="h-96 max-w-2xl" x-show="currentIndex == index + 1" x-transition:enter="transition-all transform translate-x-full duration-300">
-                              <img :src="image" alt="Image" class="absolute inset-0 z-10 h-full w-full object-cover opacity-100"/>
-                              <!-- <figcaption class="absolute inset-x-0 bottom-1 z-20 w-96 mx-auto p-4 font-light text-sm text-center tracking-widest leading-snug bg-gray-300 bg-opacity-25">
-                                  Any kind of content here!
-                                  Primum in nostrane potestate est, quid meminerimus? Nulla erit controversia. Vestri haec verecundius, illi fortasse constantius. 
-                              </figcaption> -->
-                              </figure>
-                          </template>
-                          <button @click="back()"
-                              class="absolute left-0 lg:left-14 top-1/2 -translate-y-1/2 w-14 h-14 lg:w-11 lg:h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200">
-                              <svg class=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-white hover:-translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                  xmlns="http://www.w3.org/2000/svg">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7">
-                                  </path>
-                              </svg>
-                          </button>
-                      
-                          <button @click="next()"
-                          class="absolute right-0 lg:right-14 top-1/2 -translate-y-1/2 w-14 h-14 lg:w-11 lg:h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200">
-                              <svg class=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-white hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
-                              </svg>
-                          </button>
-                      </article>
+              </section>
+              <section id="gallery" class="md:w-[50%] lg:w-[75%] mx-auto">
+                <div class="swiper max-h-[400px]">
+                  <!-- Additional required wrapper -->
+                  <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                      <img class="object-cover" src="/src/img1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="object-cover" src="/src/img2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="object-cover" src="/src/img3.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="object-cover" src="/src/img4.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="object-cover" src="/src/img5.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                      <img class="object-cover" src="/src/img6.webp" alt="">
+                    </div>
+                    ...
                   </div>
-              </div>
+                  <!-- If we need navigation buttons -->
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+              </section>
               <section class="bg-gray-100 lg:px-20 pb-20">
                     <h1 class="text-6xl text-center font-bold text-gray-900 py-20">Recent reviews</h1>
                     <div class="flex flex-col gap-10 lg:grid grid-cols-2 xl:grid-cols-4 lg:gap-20 lg:pl-10">
@@ -435,6 +439,7 @@
     </div>
   </footer>
    <script src="/index.js"></script>
+   <script src="/slider.js"></script>
    <script src="/app.js"></script>
 </body>
 
