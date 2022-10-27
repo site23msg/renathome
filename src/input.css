@@ -13,8 +13,13 @@
     font-display: swap;
 }
 
-/* body {
+body {
     overflow-x: hidden !important
-} */
+}
+
+.overflowyhidden {
+    overflow-y:hidden !important;
+}
+
 
 @tailwind utilities;
