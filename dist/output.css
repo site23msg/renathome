@@ -636,10 +636,6 @@ body {
   right: 33.333333%;
 }
 
-.top-\[20\%\] {
-  top: 20%;
-}
-
 .top-0 {
   top: 0px;
 }
@@ -660,6 +656,10 @@ body {
   left: 0.75rem;
 }
 
+.top-\[20\%\] {
+  top: 20%;
+}
+
 .-top-8 {
   top: -2rem;
 }
@@ -676,12 +676,12 @@ body {
   z-index: 50;
 }
 
-.z-40 {
-  z-index: 40;
-}
-
 .z-20 {
   z-index: 20;
+}
+
+.z-40 {
+  z-index: 40;
 }
 
 .m-4 {
@@ -754,20 +754,20 @@ body {
   max-height: 400px;
 }
 
-.w-\[500px\] {
-  width: 500px;
-}
-
-.w-full {
-  width: 100%;
-}
-
 .w-1\/2 {
   width: 50%;
 }
 
 .w-10 {
   width: 2.5rem;
+}
+
+.w-\[500px\] {
+  width: 500px;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .w-20 {
@@ -792,6 +792,10 @@ body {
 
 .w-3 {
   width: 0.75rem;
+}
+
+.min-w-full {
+  min-width: 100%;
 }
 
 .max-w-\[240px\] {
@@ -844,12 +848,12 @@ body {
   justify-content: space-around;
 }
 
-.gap-10 {
-  gap: 2.5rem;
-}
-
 .gap-14 {
   gap: 3.5rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
 }
 
 .gap-4 {
@@ -963,6 +967,11 @@ body {
   padding-right: 1.25rem;
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -976,11 +985,6 @@ body {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
 }
 
 .py-20 {
@@ -1055,14 +1059,14 @@ body {
   font-family: Inter, sans-serif;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-xl {

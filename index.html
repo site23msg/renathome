@@ -15,11 +15,68 @@
 </head>
 <body class="font-Inter">
     <!--Home section-->
-    <div id="home" class="relative aspect-w-16 aspect-h-9">
+    <div id="home" class="aspect-w-16 aspect-h-9 relative">
         <video class="brightness-50 hover:brightness-100" id="ocScreencapVideo" width="560" height="315" loop src="/src/Hotel in the Philippines.mp4" showinfo="0" controls="false" title="YouTube video player" frameborder="0"; encrypted-media; picture-in-picture" allowfullscreen>
         </video>
         <span id="welcome-text" class="uppercase absolute inset-[40%] text-white lg:text-6xl font-bold inline">Welcome</span>
     </div>
+    <section :class="{ 'bg-gray-900 lg:opacity-90 shadow transition duration-100' : showBar }"
+            class="flex justify-between items-center text-white top-0 absolute min-w-full lg:px-10 z-50" x-data="{ showBar: false, navbar: false }" id="home" @scroll.window="showBar = (window.pageYOffset > 20) ? true : false">
+        <div class="hidden md:flex items-center z-20 drop-shadow-2xl">
+            <h1 class="text-6xl text-lime-500 z-20">L</h1>
+            <span class="text-3xl font-bold absolute left-14 bottom-2">House</span>
+        </div>
+        <nav class="hidden md:block">
+            <ul class="flex gap-14 font-bold text-xl">
+            <li>
+                <a id="homeanchor" href="">Home</a>
+            </li>
+            <li>
+                <a id="aboutanchor" href="">About</a>
+            </li>
+            <li>
+                <a id="galleryanchor" href="">Gallery</a>
+            </li>
+            <li>
+                <a class="btn-open cursor-pointer">Booking</a>
+            </li>
+            <li>
+                <a id="contactanchor"  href="">Contact</a>
+            </li>
+            </ul>
+        </nav>
+        <nav class="md:hidden">
+            <ul :class="navbar === false ? 'absolute top-0 left-0 flex transform duration-500 transition-all -translate-x-full flex-col' : 'absolute top-0 left-0 flex transform duration-500 transition-all translate-x-0 flex-col bg-gray-900 gap-10 text-white'"
+            class="px-5 w-1/2 text-xl py-5">
+                <li>
+                <div class="flex items-center z-20 drop-shadow-2xl relative">
+                    <h1 class="text-6xl text-lime-500 z-20">L</h1>
+                    <span class="text-3xl font-bold absolute left-3 bottom-2">House</span>
+                </div>
+                </li>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Gallery</a>
+                </li>
+                <li>
+                    <a href="">Booking</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="flex flex-col w-10 m-4 cursor-pointer relative md:hidden" @click="navbar = !navbar" @click.away="navbar = false">
+            <hr class="border-2 border-Darkblue dark:border-white border-solid  mt-2">
+            <hr class="border-2 border-Darkblue  dark:border-white border-solid mt-2">
+            <hr class="border-2 border-Darkblue dark:border-white border-solid mt-2">
+        </div>
+    </section>
     <section class="modal hidden absolute top-[20%] inset-x-1/3 z-50">
         <form action="" method="post">
             <div class="bg-gray-900 w-[500px] px-5 py-10 rounded-md flex flex-col gap-10">
@@ -84,63 +141,6 @@
         </form>
     </section>
     <div class="overlay hidden fixed inset-0 w-full h-full backdrop-blur-[10px] z-40"></div>
-    <section :class="{ 'bg-gray-900 lg:opacity-90 shadow transition duration-100' : showBar }"
-              class="flex justify-between items-center text-white top-0 fixed w-full lg:px-10 z-50" x-data="{ showBar: false, navbar: false }" id="home" @scroll.window="showBar = (window.pageYOffset > 20) ? true : false">
-        <div class="hidden md:flex items-center z-20 drop-shadow-2xl">
-            <h1 class="text-6xl text-lime-500 z-20">L</h1>
-            <span class="text-3xl font-bold absolute left-14 bottom-2">House</span>
-        </div>
-        <nav class="hidden md:block">
-            <ul class="flex gap-14 font-bold text-xl">
-            <li>
-                <a id="homeanchor" href="">Home</a>
-            </li>
-            <li>
-                <a id="aboutanchor" href="">About</a>
-            </li>
-            <li>
-                <a id="galleryanchor" href="">Gallery</a>
-            </li>
-            <li>
-                <a class="btn-open cursor-pointer">Booking</a>
-            </li>
-            <li>
-                <a id="contactanchor"  href="">Contact</a>
-            </li>
-            </ul>
-        </nav>
-      <nav class="md:hidden">
-        <ul :class="navbar === false ? 'absolute top-0 left-0 flex transform duration-500 transition-all -translate-x-full flex-col bg-gray-900 gap-10 text-white' : 'absolute top-0 left-0 flex transform duration-500 transition-all translate-x-0 flex-col bg-gray-900 gap-10 text-white'"
-         class="px-5 w-1/2 text-xl py-5">
-            <li>
-              <div class="flex items-center z-20 drop-shadow-2xl relative">
-                <h1 class="text-6xl text-lime-500 z-20">L</h1>
-                <span class="text-3xl font-bold absolute left-3 bottom-2">House</span>
-              </div>
-            </li>
-            <li>
-                <a href="">Home</a>
-            </li>
-            <li>
-                <a href="">About</a>
-            </li>
-            <li>
-                <a href="">Gallery</a>
-            </li>
-            <li>
-                <a href="">Booking</a>
-            </li>
-            <li>
-                <a href="">Contact</a>
-            </li>
-        </ul>
-      </nav>
-      <div class="flex flex-col w-10 m-4 cursor-pointer relative md:hidden" @click="navbar = !navbar" @click.away="navbar = false">
-        <hr class="border-2 border-Darkblue dark:border-white border-solid  mt-2">
-        <hr class="border-2 border-Darkblue  dark:border-white border-solid mt-2">
-        <hr class="border-2 border-Darkblue dark:border-white border-solid mt-2">
-      </div>
-    </section>
     <main>
         <section>
             <div class="bg-white text-sm text-gray-900 px-5 lg:px-0 flex flex-col lg:flex-row gap-4">
@@ -451,13 +451,16 @@
                     Useful links
                 </h6>
                 <p class="mb-4">
-                    <a href="#!" class="text-white">Pricing</a>
+                    <a href="#!" class="text-white">About</a>
                 </p>
                 <p class="mb-4">
-                    <a href="#!" class="text-white">Settings</a>
+                    <a href="#!" class="text-white">About</a>
                 </p>
                 <p class="mb-4">
-                    <a href="#!" class="text-white">Orders</a>
+                    <a href="#!" class="text-white">Gallery</a>
+                </p>
+                <p class="mb-4">
+                    <a href="#!" class="text-white">Booking</a>
                 </p>
             </div>
             <div class="">

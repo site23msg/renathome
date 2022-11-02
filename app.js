@@ -16,16 +16,18 @@ const welcomeTexts = ['Welcome', 'Wilkommen', 'Üdvözöllek']
 
 let counter = 0;
 
-function display () {
-    if(counter < welcomeTexts.length) {
-        welcomeText.innerHTML = welcomeTexts[counter]
-        counter++;
-    } else {
-        counter = 0;
-    }
-}
 
-setInterval(display,2000)
+window.addEventListener('load', () => {
+    function display () {
+        if(counter < welcomeTexts.length) {
+            welcomeText.innerHTML = welcomeTexts[counter]
+            counter++;
+        } else {
+            counter = 0;
+        }
+    }
+    setInterval(display,2000)
+})
 
 homeAnchor.addEventListener('click', (e) => {
     e.preventDefault();
