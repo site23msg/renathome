@@ -33,6 +33,7 @@ var map = L.map('map').setView([47.500, 19], 13);
 var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
 }).addTo(map);
+map.attributionControl.setPrefix(false);
 
 const marker = L.marker([47.500, 19]).addTo(map);
 
