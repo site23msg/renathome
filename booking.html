@@ -15,79 +15,76 @@
 </head>
 <body class="font-Inter">
     <!--Home section-->
-    <div class="aspect-w-16 aspect-h-9 hidden md:relative md:block bg-[url('/src/3.jpg')]">
-        <div class="bg-white w-[50%] h-[70%] m-auto bg-opacity-70 px-10 rounded-md">
-            <h1 class="text-black font-bold text-5xl text-center py-10">Booking</h1>
-            <div class="flex justify-center gap-10">
-                <div class="basis-[70%]">
-                    <div>
-                        <img class="rounded-md" src="/src/4.jpg" alt="">
-                    </div>
-                    <div>
-                        <div></div>
-                        <div></div>
-                    </div>
+    <div class="h-screen block bg-[url('/src/3.jpg')] relative">
+    </div>
+    <div class="bg-white w-[90%] lg:w-[70%] xl:w-[50%] bg-opacity-70 px-10 py-5 rounded-md absolute top-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <h1 class="text-black font-bold text-5xl text-center py-10">Booking</h1>
+        <div class="flex justify-center gap-10">
+            <div class="basis-[50%] lg:basis-full hidden lg:block xl:basis-[70%]">
+                <div>
+                    <img class="rounded-md" src="/src/4.jpg" alt="">
                 </div>
-                <div class="basis-[30%]">
-                    <h2 class="text-black font-bold text-2xl mb-10">Your reservation</h2>
-                    <div class="flex flex-col gap-10">
+            </div>
+            <div class="lg:basis-full xl:basis-[30%]">
+                <h2 class="text-black font-bold text-2xl mb-10">Your reservation</h2>
+                <div class="flex flex-col gap-10">
+                    <div>
+                        <label class="font-bold pl-2 pb-1" for="check-in">Check in</label>
+                        <input class="outline-none bg-gray-200 md:bg-none rounded-md p-2 w-full" type="date" id="check-in" placeholder="yyyy/mm/dd">
+                    </div>
+                    <div>
+                        <label class="font-bold pl-2 pb-1" for="check-out">Check out</label>
+                        <input class="outline-none bg-gray-200 md:bg-none rounded-md p-2 w-full"  type="date" id="check-out" placeholder="yyyy/mm/dd">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="font-bold pl-2 pb-1" for="check-in">Check in</label>
-                            <input class="outline-none bg-gray-200 md:bg-none rounded-md p-2 w-full" type="date" id="check-in" placeholder="yyyy/mm/dd">
+                            <label class="font-bold pb-1" for="children">Adult</label>
+                            <select class="outline-none rounded-md w-full p-2" type="text">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                                <option value="">7</option>
+                                <option value="">8</option>
+                                <option value="">9</option>
+                                <option value="">10</option>
+                            </select>
                         </div>
                         <div>
-                            <label class="font-bold pl-2 pb-1" for="check-out">Check out</label>
-                            <input class="outline-none bg-gray-200 md:bg-none rounded-md p-2 w-full"  type="date" id="check-out" placeholder="yyyy/mm/dd">
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="font-bold pb-1" for="children">Adult</label>
-                                <select class="outline-none rounded-md w-full p-2" type="text">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
-                                    <option value="">6</option>
-                                    <option value="">7</option>
-                                    <option value="">8</option>
-                                    <option value="">9</option>
-                                    <option value="">10</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="font-bold pb-1" for="children">Children</label>
-                                <select class="outline-none rounded-md w-full p-2" type="text">
-                                    <option value="">0</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
-                                    <option value="">6</option>
-                                    <option value="">7</option>
-                                    <option value="">8</option>
-                                    <option value="">9</option>
-                                    <option value="">10</option>
-                                </select>
-                            </div>
+                            <label class="font-bold pb-1" for="children">Children</label>
+                            <select class="outline-none rounded-md w-full p-2" type="text">
+                                <option value="">0</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                                <option value="">7</option>
+                                <option value="">8</option>
+                                <option value="">9</option>
+                                <option value="">10</option>
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="bg-black w-full h-1 my-10"></div>
-            <div class="flex justify-between items-center">
-                <div>
-                    <p class="text-2xl">Days</p>
-                    <span class="text-4xl font-bold">4</span>
-                </div>
-                <div>
-                    <p class="text-2xl">Price</p>
-                    <p class="text-4xl font-bold">83000 <span>ft</span></p>
-                </div>
-                <div>
-                    <button class="text-4xl font-bold px-4 py-2 bg-black text-white rounded-md transition-transform ease-linear hover:scale-[1.1]">BOOK</button>
-                </div>
+        </div>
+        <div class="bg-black w-full h-1 my-10"></div>
+        <div class="flex flex-wrap gap-x-20 gap-y-10 lg:items-center lg:justify-between lg:flex-nowrap">
+            <div>
+                <p class="text-2xl">Days</p>
+                <span class="text-4xl font-bold">4</span>
+            </div>
+            <div>
+                <p class="text-2xl">Price</p>
+                <p class="text-4xl font-bold">83000 <span>ft</span></p>
+            </div>
+            <div class="basis-full flex justify-between lg:basis-1/2">
+                <button class="lg:text-4xl font-bold px-4 py-2 bg-black text-white rounded-md transition-transform ease-linear hover:scale-[1.1]">CANCEL</button>
+                <button class="lg:text-4xl font-bold px-4 py-2 bg-black text-white rounded-md transition-transform ease-linear hover:scale-[1.1] ">BOOK</button>
             </div>
         </div>
     </div>
