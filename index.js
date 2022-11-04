@@ -5,6 +5,15 @@ autoPlayVideo.oncanplaythrough = function() {
     autoPlayVideo.removeAttribute('controls');
     autoPlayVideo.play();
 }
+//Aos initialization
+
+try{
+AOS.init();
+console.log("Succes")}
+catch(e) {
+    console.log(e);
+}
+
 document.addEventListener('alpine:init', () => {
     Alpine.data('slider', () => ({
         currentIndex: 1,

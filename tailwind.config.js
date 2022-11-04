@@ -14,7 +14,10 @@ module.exports = {
     },
     dropShadow: {
       '3xl': '0 35px 35px rgba(0,0,0, 0.25)'
-    }
+    },
+    backgroundImage: {
+      'bookingImg': "url('/src/3.jpg')"
+    },
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),

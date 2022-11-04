@@ -1,8 +1,12 @@
+// Selected anchor tags
+
 const homeAnchor = document.getElementById("homeanchor");
 const aboutAnchor = document.getElementById("aboutanchor");
 const galleryAnchor = document.getElementById("galleryanchor");
 const bookingAnchor = document.getElementById("bookinganchor");
 const contactAnchor = document.getElementById("contactanchor");
+
+// Selected sections
 
 const homeSection = document.getElementById("home")
 const aboutSection = document.getElementById("about")
@@ -10,7 +14,25 @@ const gallerySection = document.getElementById("gallery")
 const bookingSection = document.getElementById("booking")
 const contactSection = document.getElementById("contact")
 
+// Hero section text
+
 const welcomeText = document.querySelector('#welcome-text')
+
+// Images for popup
+
+document.querySelectorAll('.img-container img').forEach( image => {
+    image.onclick = () => {
+        document.querySelector('.popup-image').style.display='block';
+        document.querySelector('body').classList.add('overflowyhidden')
+        document.querySelector('.popup-image img').src = image.getAttribute('src')
+    }
+})
+
+document.querySelector('.popup-image span').addEventListener('click', () => {
+    document.querySelector('.popup-image').style.display='none';
+    document.querySelector('body').classList.remove('overflowyhidden')
+})
+
 
 const welcomeTexts = ['Welcome', 'Wilkommen', 'Üdvözöllek']
 
@@ -60,30 +82,3 @@ contactAnchor.addEventListener('click', (e) => {
         behavior: 'smooth'
     });
 })
-
-const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
-
-
-const openModalBtn = document.querySelector(".btn-open");
-const closeModalBtn = document.querySelector(".btn-close");
-const body = document.querySelector("body");
-
-
-const openModal = function () {
-    modal.classList.remove("hidden");
-    overlay.classList.remove("hidden");
-    body.classList.add("overflowyhidden");
-  };
-
-openModalBtn.addEventListener("click", openModal);
-
-const closeModal = function () {
-    modal.classList.add("hidden");
-    overlay.classList.add("hidden");
-    body.classList.remove("overflowyhidden")
-};
-
-closeModalBtn.addEventListener("click", closeModal);
-
-overlay.addEventListener("click", closeModal);
