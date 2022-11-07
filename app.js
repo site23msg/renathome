@@ -28,6 +28,35 @@ document.querySelectorAll('.img-container img').forEach( image => {
     }
 })
 
+// Scrollto top after hit the bottom of the page
+
+const scroll = document.getElementById('scrollTotop');
+
+window.addEventListener('scroll', () => {
+    console.log(document.body.offsetHeight)
+    console.log(window.pageYOffset)
+    if (window.pageYOffset >= 2000) {
+        scroll.classList.remove("translate-y-96");
+        scroll.classList.add("translate-y-0", "duration-700", "ease-linear");
+      } else {
+        scroll.classList.add("translate-y-96");
+      }
+})
+
+function scrollToTop() {
+    try {
+    homeSection.scrollIntoView({
+        block: 'center',
+        behavior: 'smooth'
+    });
+    }
+    catch (e) {
+        console.log(e)
+    }
+}
+
+scroll.addEventListener('click',scrollToTop);
+
 document.querySelector('.popup-image span').addEventListener('click', () => {
     document.querySelector('.popup-image').style.display='none';
     document.querySelector('body').classList.remove('overflowyhidden')
@@ -58,6 +87,7 @@ homeAnchor.addEventListener('click', (e) => {
         behavior: 'smooth'
     });
 })
+
 
 aboutAnchor.addEventListener('click', (e) => {
     e.preventDefault();
